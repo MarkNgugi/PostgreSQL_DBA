@@ -4,17 +4,19 @@
 
 ### Key Features
 
-#### - `Dynamic Masking`: With dynamic masking, you can create specific views that display anonymized data. Therefore, you can have the real data in the underlying tables but only reveal necessary masked data to users or applications.
-
+#### - Dynamic Masking: With dynamic masking, you can create specific views that display anonymized data. Therefore, you can have the real data in the underlying tables but only reveal necessary masked data to users or applications.
+```sql
 CREATE MASKED VIEW masked_clients AS SELECT * FROM clients;
 SELECT anon.mask_data('clients', 'masked_clients');
-
-    In-Place Anonymization: You can also anonymize data in place, making the change permanent. This method is useful when you need to share databases between environments, such as testing and development, but want to ensure privacy.
-
+```
+    
+#### - In-Place Anonymization: You can also anonymize data in place, making the change permanent. This method is useful when you need to share databases between environments, such as testing and development, but want to ensure privacy.
+```sql
 SELECT anon.anonymize('clients');
+```
 
-    Extensible and Customizable Functions: You can define your own anonymization functions, providing great flexibility in how you anonymize data. These custom functions can then be applied to specific columns or tables.
-
+#### - Extensible and Customizable Functions: You can define your own anonymization functions, providing great flexibility in how you anonymize data. These custom functions can then be applied to specific columns or tables.
+```sql
 CREATE FUNCTION anon_ssn(text) RETURNS text AS
 $$
   DECLARE
@@ -24,15 +26,18 @@ $$
   END;
 $$ LANGUAGE plpgsql;
 SELECT anon.set_anonymous_function('clients', 'ssn', 'anon_ssn(text)');
+```
 
-Getting Started
+### Getting Started
 
-    Install the PostgreSQL Anonymizer extension:
-
+#### 1. Install the PostgreSQL Anonymizer extension:
+```sql
 CREATE EXTENSION IF NOT EXISTS anon CASCADE;
+```
 
-    Define the anonymization methods for each sensitive field in your tables. You can use the built-in functions or create your own.
-
+#### 2. Define the anonymization methods for each sensitive field in your tables. You can use the built-in functions or create your own.
+```sql
 SELECT anon.set_anonymous_function('clients', 'email', 'anon.email(text)');
+```
 
-    Apply anonymization using either dynamic masking or in-place methods, depending on your requirements.
+#### 3. Apply anonymization using either dynamic masking or in-place methods, depending on your requirements.
