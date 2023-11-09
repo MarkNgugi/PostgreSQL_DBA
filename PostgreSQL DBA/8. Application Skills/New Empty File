@@ -8,43 +8,68 @@ all of us can view all the databases and tables created
 
 
 
-Customer
-- Customer_id
-First Name
-Last Name
+Sure thing! Here are five column names for each of the given tables:
+
+== Mike
+    Customer:
+        customer_id
+        customer_name
+        customer_email
+        customer_phone
+        customer_address
+
+    Customer_orders:
+        order_id
+        customer_id
+        order_date
+        total_amount
+        order_status
 
 
-Customer_orders
-Order_id
+== Mark
+    Suppliers:
+        supplier_id
+        supplier_name
+        supplier_email
+        supplier_phone
+        supplier_address
 
-Customer Addresses
-
-suppliers
-Supplier_id
-Supplier
-
-
-products
-Product_id
-Name
-
-
-
-products categories
-Category_id
-Category_Name
+    Products:
+        product_id
+        product_name
+        unit_price
+        quantity_in_stock
+        supplier_id
 
 
-payments
-Payment_id
-Payment_Code
+== Steve
+    Products_categories:
+        category_id
+        category_name
+        category_description
+        parent_category_id
+        is_active
+
+    Payments:
+        payment_id
+        order_id
+        payment_date
+        payment_amount
+        payment_method
 
 
-inventory
+== Philip
+    Inventory:
+        product_id
+        quantity_in_stock
+        last_restock_date
+        reorder_point
+        restock_quantity
 
-carts
-Cart_id
-
-delivery
-Delivery_id
+    Delivery:
+        delivery_id
+        order_id
+        delivery_date
+        delivery_address
+        delivery_status
 
