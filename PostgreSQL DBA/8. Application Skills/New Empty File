@@ -1,0 +1,50 @@
+creating a database with tables and records (from one role)
+create a script/cronjob to backup and store the file in the desktop
+connect to the server/machine
+copy the files to the remote machine on a desktop folder
+use the backup files to create databases/tables in the server/machine
+create a main backup and then share to the other machines
+all of us can view all the databases and tables created
+
+
+
+Customer
+- Customer_id
+First Name
+Last Name
+
+
+Customer_orders
+Order_id
+
+Customer Addresses
+
+suppliers
+Supplier_id
+Supplier
+
+
+products
+Product_id
+Name
+
+
+
+products categories
+Category_id
+Category_Name
+
+
+payments
+Payment_id
+Payment_Code
+
+
+inventory
+
+carts
+Cart_id
+
+delivery
+Delivery_id
+
